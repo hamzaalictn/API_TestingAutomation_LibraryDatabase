@@ -6,8 +6,8 @@ import io.restassured.path.json.JsonPath;
 public class ComplexJsonParse {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
+        System.out.println("test");
 
         JsonPath js = new JsonPath(Payload.CoursePrice());
         //Print No of courses returned by API
@@ -32,6 +32,7 @@ public class ComplexJsonParse {
             System.out.println(courseTitles);
 
         }
+
         //Print no of copies sold by RPA Course
 
         System.out.println("Print no of copies sold by RPA Course");

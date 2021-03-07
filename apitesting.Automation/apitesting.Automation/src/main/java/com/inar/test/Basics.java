@@ -9,6 +9,11 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class Basics {
+
+    String projectName = "";
+    String getProjectname(){
+        return projectName;
+    }
     public static void main(String[] args) {
        // Validate if Add place API is working as expected
         // given - all input details
@@ -36,7 +41,6 @@ public class Basics {
 
         given().log().all().queryParam("key","qaclick123").header("Content-Type","application/json").body(Payload.updatePlace(placeId,newAddress)).when().
                 put("maps/api/place/update/json").then().assertThat().statusCode(200).body("msg",equalTo("Address succesfully updated"));
-
 
 
         String getPlaceResponse = given().log().all().queryParam("key","qaclick123").queryParam("place_id","placeId").when().get("maps/api/place/get/json")
